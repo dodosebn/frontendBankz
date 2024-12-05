@@ -5,21 +5,14 @@ import imgMock from '../images/image-mockups.png';
 import Button from './button';
 
 const Intro = () => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize); 
-    }, []);
-
+   
     return (
         <div className='font-sans  pb-4'>
             <div className='relative'>
-                <img src={isMobile ? intBgMobile : intBgDesktop} alt="Background" className='w-full'/>
+                <picture>
+                    <source media='(min-width: 768px)' srcSet={intBgDesktop} className='w-full'/>
+                    <img src={intBgMobile} alt="kjt" className='w-full' />
+                </picture>
                 <div className='absolute z-10 bottom-14'>
   <img src={imgMock} alt="Mockups" />
 </div>

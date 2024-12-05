@@ -11,6 +11,15 @@ const NavBar = ({ className }) => {
         </div>
         <div>
           <img src={NavBtn} alt="nav-btn" />
+        <aside className='bg-White flex flex-col justify-center'>
+          <ul className='pt-8'>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Blog</li>
+            <li>Careers</li>
+          </ul>
+        </aside>
         </div>
       </nav>
     </div>
