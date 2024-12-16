@@ -1,32 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import intBgMobile from '../images/bg-intro-mobile.svg';
 import intBgDesktop from '../images/bg-intro-desktop.svg';
 import imgMock from '../images/image-mockups.png';
-import Button from './button';
+import Button from './shared/button';
 
-const Intro = () => {
-   
-    return (
-        <div className='font-sans  pb-4'>
-            <div className='relative'>
-                <picture>
-                    <source media='(min-width: 768px)' srcSet={intBgDesktop} className='w-full'/>
-                    <img src={intBgMobile} alt="kjt" className='w-full' />
-                </picture>
-                <div className='absolute z-10 bottom-14'>
-  <img src={imgMock} alt="Mockups" />
+const Intro = ({ menuClicked }) => {
+  const backgroundStyle = menuClicked
+    ? 'bg-gradient-to-b from-[#9698a5] to-white'
+    : '';
+
+  return (
+    <div className="font-sans LightGrayishBlue pb-4">
+      <div className={`relative ${backgroundStyle}`}>
+        {/* Background for desktop */}
+        <section className="flex flex-col justify-center lg:relative">
+          <picture className="lg:relative lg:left-[35rem] bottom-[2rem]">
+            <source media="(min-width: 768px)" srcSet={intBgDesktop} />
+            <img
+              src={intBgMobile}
+              alt="Background illustration"
+              className="w-full lg:w-[73rem] lg:h-[31rem] lg:object-cover z-0"
+            />
+          </picture>
+
+          {/* Image mockup */}
+          <div className={`absolute right-0 left-0 mb-[15rem] ${menuClicked ? 'hidden' : 'block'} lg:bottom-[39em] lg:left-[45rem] lg:relative z-0`}>
+  <img
+    src={imgMock}
+    alt="Mockups"
+    className="h-[37rem] w-full lg:w-[40rem] lg:h-[50rem]"
+  />
 </div>
 
-            </div>
-            <div className='px-8 pb-4 text-center font-sans'>
-                <h1 className='text-5xl text-DarkBlue opacity-[2rem] font-medium'>Next generation digital banking</h1>
-                <p className='pt-5 text-GrayishBlue text-start text-lg w-[23rem] font-medium'>
-                    Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.
-                </p>
-                <Button className={'pt-5'} />
-            </div>
-        </div>
-    );
-}
+        </section>
+
+        {/* Main content */}
+        <section className="flex flex-col justify-center text-center font-sans lg:relative bottom-[88em] pb-10 lg:pb-0 right-[16rem]">
+          <h1 className="text-4xl text-DarkBlue opacity-[2rem] font-medium lg:pr-[20.5rem]">
+            Next generation
+            <span className="hidden lg:block pr-[2rem]">digital banking</span>
+          </h1>
+          <article className="pt-5 flex justify-center text-center font-sans text-GrayishBlue text-[1rem]  lg:pr-[12rem]">
+            <p className="w-[23rem] lg:w-[25rem] font-medium lg:text-start">
+              Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, <br className="hidden lg:block" />budgeting, investing, and much more.
+            </p>
+          </article>
+          <Button className="pt-5 lg:mr-[27rem]" />
+        </section>
+      </div>
+    </div>
+  );
+};
 
 export default Intro;

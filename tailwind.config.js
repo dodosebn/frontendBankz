@@ -10,12 +10,14 @@ module.exports = {
 "LimeGreen": "hsl(136, 65%, 51%)",
 "BrightCyan": "hsl(192, 70%, 51%)",
 "GrayishBlue": "hsl(233, 8%, 62%)",
-"LightGrayishBlue": "hsl(220, 16%, 96%)",
-"VeryLightGray": "hsl(0, 0%, 98%)",
-"White":" hsl(0, 0%, 100%)"
+"LightGrayishBlue": "#fafafa",
+"VeryLightGray": "#f4f5f7",
+"White":" hsl(0, 0%, 100%)",
+"slateGray": "#8b8d98",
+"shadow": "#9698a5"
       },
       fontFamily: {
-        sans: ['Public Sans'], 
+        sans: ['Public Sans', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
 
     },
