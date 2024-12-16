@@ -17,7 +17,6 @@ The designs were created to the following widths:
 - Lime Green: hsl(136, 65%, 51%)
 - Bright Cyan: hsl(192, 70%, 51%)
 
-### Neutral
 
 - Grayish Blue: hsl(233, 8%, 62%)
 - Light Grayish Blue: hsl(220, 16%, 96%)

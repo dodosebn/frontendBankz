@@ -3,6 +3,7 @@ import NavBar from './components/navbar';
 import Intro from './components/intro';
 import Reasons from './components/reasons';
 import LatestArticle from './components/latestArticle';
+import Footer from './components/footer';
 
 const App = () => {
   const [menuClicked, setMenuClicked] = useState(false);
@@ -13,6 +14,7 @@ const App = () => {
       <Intro menuClicked={menuClicked} />
       <Reasons />
       <LatestArticle />
+      <Footer />
     </div>
   );
 };

@@ -7,7 +7,12 @@ import apiImg from '../../images/icon-api.svg';
 import simImg from '../../images/icon-budgeting.svg';
 import onboardingImg from '../../images/icon-onboarding.svg';
 import onlineImg from '../../images/icon-online.svg';
-
+// footerIcons
+import faceIcon from '../../images/icon-facebook.svg';
+import youIcon from '../../images/icon-youtube.svg';
+import InstaIcon from '../../images/icon-instagram.svg';
+import twitIcon from '../../images/icon-twitter.svg';
+import pintIcon from '../../images/icon-pinterest.svg';
 
 export const latestItems = [
     {
@@ -65,4 +70,27 @@ imgSrc: Money
       title: 'Open API',
       content: 'Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.'
     }
+    ];
+
+    export const footerIcons = [
+      {
+id: 1,
+imgSrc: faceIcon
+      },
+      {
+        id: 2,
+        imgSrc: youIcon
+              },
+              {
+                id: 3,
+                imgSrc: twitIcon
+                      },
+                      {
+                        id: 4,
+                        imgSrc: pintIcon
+                              },
+                              {
+                                id: 5,
+                                imgSrc: InstaIcon
+                                      }
     ];
