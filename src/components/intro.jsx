@@ -1,13 +1,26 @@
-import React from 'react';
-import intBgMobile from '../images/bg-intro-mobile.svg';
-import intBgDesktop from '../images/bg-intro-desktop.svg';
-import imgMock from '../images/image-mockups.png';
-import Button from './shared/button';
+import React from "react";
+import intBgMobile from "../images/bg-intro-mobile.svg";
+import intBgDesktop from "../images/bg-intro-desktop.svg";
+import imgMock from "../images/image-mockups.png";
+import Button from "./shared/button";
+import { motion } from "framer-motion";
+
+const navVariants = {
+  hidden: {
+    x: "-100vw",
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.4 },
+  },
+};
 
 const Intro = ({ menuClicked }) => {
   const backgroundStyle = menuClicked
-    ? 'bg-gradient-to-b from-[#9698a5] to-white'
-    : '';
+    ? "bg-gradient-to-b from-[#9698a5] to-white"
+    : "";
 
   return (
     <div className="font-sans LightGrayishBlue pb-4">
@@ -24,29 +37,45 @@ const Intro = ({ menuClicked }) => {
           </picture>
 
           {/* Image mockup */}
-          <div className={`absolute right-0 left-0 mb-[15rem] ${menuClicked ? 'hidden' : 'block'} lg:bottom-[39em] lg:left-[45rem] lg:relative z-0`}>
-  <img
-    src={imgMock}
-    alt="Mockups"
-    className="h-[37rem] w-full lg:w-[40rem] lg:h-[50rem]"
-  />
-</div>
-
+          <div
+            className={`absolute right-0 left-0 mb-[15rem] ${
+              menuClicked ? "hidden" : "block"
+            } lg:bottom-[39em] lg:left-[45rem] lg:relative z-0`}
+          >
+            <img
+              src={imgMock}
+              alt="Mockups"
+              className="h-[37rem] w-full lg:w-[40rem] lg:h-[50rem]"
+            />
+          </div>
         </section>
 
         {/* Main content */}
-        <section className="flex flex-col justify-center text-center font-sans lg:relative bottom-[88em] pb-10 lg:pb-0 right-[16rem]">
-          <h1 className="text-4xl text-DarkBlue opacity-[2rem] font-medium lg:pr-[20.5rem]">
+        <motion.section
+          variants={navVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col justify-center text-center font-sans lg:relative bottom-[88em] pb-10 lg:pb-0 right-[16rem]"
+        >
+          <h1 className="text-4xl text-DarkBlue font-medium lg:pr-[20.5rem]">
             Next generation
             <span className="hidden lg:block pr-[2rem]">digital banking</span>
           </h1>
-          <article className="pt-5 flex justify-center text-center font-sans text-GrayishBlue text-[1rem]  lg:pr-[12rem]">
+          <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 1, stiffness: 300 }}
+            className="pt-5 flex justify-center text-center font-sans text-GrayishBlue text-[1rem] lg:pr-[12rem]"
+          >
             <p className="w-[23rem] lg:w-[25rem] font-medium lg:text-start">
-              Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, <br className="hidden lg:block" />budgeting, investing, and much more.
+              Take your financial life online. Your Easybank account will be a
+              one-stop-shop for spending, saving,{" "}
+              <br className="hidden lg:block" />
+              budgeting, investing, and much more.
             </p>
-          </article>
+          </motion.article>
           <Button className="pt-5 lg:mr-[27rem]" />
-        </section>
+        </motion.section>
       </div>
     </div>
   );

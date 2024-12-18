@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../images/logo.svg';
 import { footerIcons } from './shared/mappings';
+import { LogoForFooter } from './shared/mappings';
 import Button from './shared/button';
 
 const Footer = () => {
@@ -10,18 +10,18 @@ const Footer = () => {
         <section className="flex flex-col lg:flex-row gap-[5rem] flex-1 relative">
           {/* Logo and Icons */}
           <div className="flex flex-col items-center lg:items-start pt-5">
-            <img src={logo} alt="logo" className="mb-4 bg-LightGrayishBlue border-none outline-none p-3" />
+         < LogoForFooter />
             <div className="flex gap-4 pt-6">
-              {footerIcons.map((footer) => (
-                <div key={footer.id}>
-                  <img
-                    src={footer.imgSrc}
-                    alt="footer icon"
-                    className="w-6 h-6 hover:text-LimeGreen hover:filter hover:brightness-125"
-                  />
-                </div>
-              ))}
-            </div>
+      {footerIcons.map((footer) => (
+      <div
+      key={footer.id}
+      className="w-6 h-6 fill-current text-LightGrayishBlue hover:text-LimeGreen"
+    >
+      {footer.imgSrc}
+    </div>
+    
+      ))}
+    </div>
           </div>
 
           {/* Links */}
